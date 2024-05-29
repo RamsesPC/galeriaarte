@@ -1,0 +1,104 @@
+/* estilosdashboard.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: #b76e79;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 50px;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #b76e79;
+    margin-bottom: 30px;
+  }
+  
+  .artist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .artist-table th,
+  .artist-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .artist-table th {
+    background-color: #f4c2c2;
+    color: #333;
+  }
+  
+  .artist-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .artist-table tbody tr:nth-child(odd) {
+    background-color: #fef5f5;
+  }
+  
+  .artist-table td {
+    color: #333;
+  }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    background-color: #b76e79;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-container button:hover {
+    background-color: #a35763;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
