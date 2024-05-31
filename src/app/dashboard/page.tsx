@@ -21,7 +21,7 @@ const Dashboard = () => {
     // Función para obtener los datos de los artistas
     const fetchArtists = async () => {
       try {
-        const response = await fetch('https://proyecto-zeta-sandy.vercel.app/');
+        const response = await fetch('https://proyecto-zeta-sandy.vercel.app/artista');
         
         if (response.ok) {
           const data = await response.json();
