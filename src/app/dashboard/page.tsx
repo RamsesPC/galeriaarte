@@ -21,7 +21,7 @@ const Dashboard = () => {
     // Función para obtener los datos de los artistas
     const fetchArtists = async () => {
       try {
-        const response = await fetch('http://localhost:3100/artista');
+        const response = await fetch('https://proyecto-54u3hn0ss-ramses-patinos-projects.vercel.app/');
         if (response.ok) {
           const data = await response.json();
           setArtists(data);
