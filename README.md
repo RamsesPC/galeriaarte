@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto Galería de Arte
 
-## Getting Started
+## Descripción del Proyecto
 
-First, run the development server:
+Este proyecto es una galería de arte construida con Next.js y TypeScript. Permite a los usuarios ver obras de arte y la biografía de los artistas. El proyecto está estructurado para ser fácil de mantener y escalar.
 
-```bash
+## Estructura del Proyecto
+
+- `src/`: Contiene el código fuente del proyecto.
+  - `app/`: Contiene los archivos de las páginas.
+    - `dashboard/`: Contiene la página del dashboard.
+      - `page.tsx`: Componente principal de la página del dashboard.
+  - `components/`: Contiene los componentes reutilizables del proyecto.
+    - `FormArtista.tsx`: Componente del formulario para agregar artistas.
+- `public/`: Contiene los archivos estáticos.
+- `styles/`: Contiene los archivos de estilos globales.
+- `__tests__/`: Contiene los archivos de pruebas.
+
+## Prototipos de la Vista y Manual de Uso
+
+### Dashboard
+
+El dashboard muestra una lista de artistas con su biografía y obras de arte.
+
+#### Uso del Dashboard
+
+1. Al acceder a la página del dashboard, se carga automáticamente una lista de artistas.
+2. Cada artista muestra su nombre, biografía y obras de arte.
+
+### FormArtista
+
+El formulario permite agregar nuevos artistas a la galería.
+
+#### Uso del FormArtista
+
+1. Completa los campos del formulario con el nombre del artista, biografía y obras.
+2. Haz clic en el botón "Enviar" para agregar el artista a la galería.
+
+## Instrucciones de Instalación y Ejecución
+
+### Prerrequisitos
+
+- Node.js (versión 14 o superior)
+- npm (versión 6 o superior)
+
+### Instalación
+
+1. Clona el repositorio:
+
+```sh
+git clone https://github.com/RamsesPC/galeriaarte.git
+
+2. Navega al directorio del proyecto:
+
+```sh 
+cd proyecto-galeria-arte
+
+3. Instala las dependencias:
+
+```sh 
+npm install
+
+### Ejecucion en desarrollo
+
+1. Inicia el servidor de desarrollo:
+
+```sh 
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
