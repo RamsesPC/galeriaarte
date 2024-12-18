@@ -1,0 +1,212 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #b76e79; /* Oro rosa */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #f4c2c2; /* Oro rosa más claro */
+}
+
+.container {
+  max-width: 900px; /* Aumentado para acomodar más contenido */
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #b76e79; /* Oro rosa */
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.opciones {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.opciones .btn {
+  margin: 10px;
+  padding: 15px 25px;
+  background-color: #b76e79; /* Oro rosa */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.opciones .btn:hover {
+  background-color: #a35763; /* Oro rosa más oscuro */
+}
+
+/* Estilos para las imágenes destacadas */
+.imagenes-destacadas {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.imagenes-destacadas h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #b76e79; /* Oro rosa */
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.imagenes img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos de formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.formGroup input:focus {
+  border-color: #b76e79; /* Oro rosa */
+  outline: none;
+}
+
+button {
+  background-color: #b76e79; /* Oro rosa */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a35763; /* Oro rosa más oscuro */
+}
+
+/* Estilos de mensajes de error y éxito */
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.success {
+  color: #4caf50;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .opciones {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagenes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.volver-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.volver-boton {
+  background-color: #b76e79; /* Oro rosa */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.volver-boton:hover {
+  background-color: #a1646d;
+}
+

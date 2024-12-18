@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Importamos useRouter desde next/navigation
 import './estilosform.css'; // Importamos los estilos globales
+import Link from 'next/link';
 
 // Definimos el componente funcional FormArtista
 const FormArtista = () => {
@@ -63,12 +64,11 @@ const FormArtista = () => {
           <img src="/Logo.png" className="logo" alt="Logo" />
         </div>
         <ul className="navbar-links">
-          <li><a href="#obras">Obras</a></li>
+          <li><a href="/obras">Obras</a></li>
           <li><a href="/dashboard">Artistas</a></li>
-          <li><a href="#tienda">Tienda</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#contactanos">Contáctanos</a></li>
+          <li><a href="/PaginaInicio">Tienda</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/conocenos">Nosotros</a></li>
         </ul>
       </nav>
       <div className="container">
@@ -106,6 +106,12 @@ const FormArtista = () => {
           {success && <p className="success">{success}</p>}
           <button type="submit">Enviar</button>
         </form>
+      </div>
+      {/* Botón para regresar a la página principal */}
+      <div className="volver-container">
+        <Link href="/">
+          <button className="volver-boton">Volver a la página principal</button>
+        </Link>
       </div>
     </div>
   );

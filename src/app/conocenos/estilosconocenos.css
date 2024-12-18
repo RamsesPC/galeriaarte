@@ -1,0 +1,142 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #b76e79; /* Oro rosa */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 50px;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar-links a:hover {
+    color: #f4c2c2; /* Oro rosa más claro */
+  }
+  
+  /* Estilos para la sección de Conócenos */
+  .container-conocenos {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-conocenos h2 {
+    text-align: center;
+    color: #b76e79; /* Oro rosa */
+    margin-bottom: 30px;
+  }
+  
+  .container-conocenos p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .info-contacto {
+    margin-top: 20px;
+  }
+  
+  .info-contacto h3 {
+    font-size: 1.5rem;
+    color: #b76e79;
+    margin-bottom: 15px;
+  }
+  
+  .redes-sociales {
+    margin-top: 30px;
+  }
+  
+  .redes-sociales h3 {
+    font-size: 1.5rem;
+    color: #b76e79;
+    margin-bottom: 15px;
+  }
+  
+  .lista-redes {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .lista-redes li {
+    margin-bottom: 10px;
+  }
+  
+  .lista-redes a {
+    color: #b76e79;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .lista-redes a:hover {
+    color: #a35763; /* Oro rosa más oscuro */
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .navbar-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .container-conocenos {
+      padding: 20px;
+    }
+  
+    .info-contacto, .redes-sociales {
+      text-align: center;
+    }
+  
+    .lista-redes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .lista-redes li {
+      margin-bottom: 5px;
+    }
+  }
+  .volver-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .volver-boton {
+    background-color: #b76e79; /* Oro rosa */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .volver-boton:hover {
+    background-color: #a1646d;
+  }
+  

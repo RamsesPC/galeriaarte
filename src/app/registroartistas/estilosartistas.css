@@ -4,150 +4,117 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-}
+  }
   
-.navbar {
+  .navbar {
     background-color: #b76e79; /* Oro rosa */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+  }
   
-.navbar-logo img {
+  .navbar-logo img {
     height: 50px;
-}
+  }
   
-.navbar-links {
+  .navbar-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-}
+  }
   
-.navbar-links li {
+  .navbar-links li {
     margin-left: 20px;
-}
+  }
   
-.navbar-links a {
+  .navbar-links a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-}
+  }
   
-.navbar-links a:hover {
+  .navbar-links a:hover {
     color: #f4c2c2; /* Oro rosa más claro */
-}
+  }
   
-.container {
-    max-width: 700px;
+  .container {
+    max-width: 800px; /* Aumentado para acomodar más campos */
     margin: 50px auto;
-    padding: 30px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
   
-h1 {
+  h1 {
     text-align: center;
     color: #b76e79; /* Oro rosa */
     margin-bottom: 30px;
-}
+  }
   
-.form {
+  .form {
     display: flex;
     flex-direction: column;
-}
+  }
   
-.formGroup {
-    margin-bottom: 20px;
-}
+  .formGroup {
+    margin-bottom: 15px;
+  }
   
-.formGroup label {
+  .formGroup label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-}
+    margin-bottom: 5px;
+    color: #333;
+  }
   
-.formGroup input,
-.formGroup textarea {
+  .formGroup input,
+  .formGroup textarea {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 15px;
-}
+  }
   
-.formGroup input[type="file"] {
-    padding: 5px;
-}
+  .formGroup input[type="file"] {
+    padding: 3px; /* Ajuste para el campo de archivo */
+  }
   
-.formGroup input:focus,
-.formGroup textarea:focus {
+  .formGroup input:focus,
+  .formGroup textarea:focus {
     border-color: #b76e79; /* Oro rosa */
     outline: none;
-    box-shadow: 0 0 3px rgba(183, 110, 121, 0.5);
-}
+  }
   
-button {
+  button {
     background-color: #b76e79; /* Oro rosa */
     color: #fff;
     border: none;
-    padding: 12px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
     transition: background-color 0.3s;
-    margin-top: 10px;
-}
+  }
   
-button:hover {
+  button:hover {
     background-color: #a35763; /* Oro rosa más oscuro */
-}
+  }
   
-.error {
+  .error {
     color: #ff4d4d;
     margin-top: 10px;
     text-align: center;
-    font-weight: bold;
-}
+  }
   
-.success {
+  .success {
     color: #4caf50;
     margin-top: 10px;
     text-align: center;
-    font-weight: bold;
-}
-  
-/* Ajustes para mejorar el diseño del formulario */
-.formGroup textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.formGroup input[type="text"],
-.formGroup input[type="email"],
-.formGroup input[type="file"] {
-    font-size: 15px;
-    padding: 12px;
-}
-  
-/* Espaciado adicional para campos relacionados */
-.formGroup.beneficiary-group {
-    margin-top: 30px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.formGroup label.optional {
-    font-weight: normal;
-    color: #777;
-    font-style: italic;
-}
-.volver-container {
+  }
+  .volver-container {
     margin-top: 20px;
     text-align: center;
   }

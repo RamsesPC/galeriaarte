@@ -1,4 +1,5 @@
 'use client'
+
 // Importamos React y useRouter
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -7,8 +8,15 @@ import './estilosdashboard.css'; // Importamos los estilos del dashboard
 // Definimos el tipo de objeto Artista
 interface Artista {
   nombre: string;
-  biografia: string;
-  obras: string;
+  declaracion: string;
+  razon_social: string;
+  rfc: string;
+  domicilio: string;
+  estado: string;
+  ciudad: string;
+  cp: string;
+  celular: string;
+  correo: string;
 }
 
 // Definimos el componente funcional Dashboard
@@ -48,32 +56,36 @@ const Dashboard = () => {
           <img src="/Logo.png" className="logo" alt="Logo" />
         </div>
         <ul className="navbar-links">
-          <li><a href="#obras">Obras</a></li>
+          <li><a href="/obras">Obras</a></li>
           <li><a href="/dashboard">Artistas</a></li>
-          <li><a href="#tienda">Tienda</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#contactanos">Contáctanos</a></li>
+          <li><a href="/PaginaInicio">Tienda</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/conocenos">Nosotros</a></li>
         </ul>
       </nav>
       <div className="container">
-        <h1>Dashboard</h1>
+        <h1>Dashboard de Artistas</h1>
         {error && <p className="error">{error}</p>}
         <table className="artist-table">
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Biografía</th>
-              <th>Obras</th> 
-              
+              <th>Declaración</th>
+              <th>Razón Social</th>
+              <th>RFC</th>
+              <th>Celular</th>
+              <th>Correo</th>
             </tr>
           </thead>
           <tbody>
             {artists.map((artist, index) => (
               <tr key={index}>
                 <td>{artist.nombre}</td>
-                <td>{artist.biografia}</td>
-                <td>{artist.obras}</td>
+                <td>{artist.declaracion}</td>
+                <td>{artist.razon_social}</td>
+                <td>{artist.rfc}</td>
+                <td>{artist.celular}</td>
+                <td>{artist.correo}</td>
               </tr>
             ))}
           </tbody>

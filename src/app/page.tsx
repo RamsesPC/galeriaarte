@@ -19,7 +19,7 @@ const Home = () => {
     e.preventDefault();
     // Validar las credenciales (puedes personalizar esto según tus necesidades)
     if (username === 'admin' && password === 'password') {
-      router.push('/form');
+      router.push('/PaginaInicio');
     } else {
       setError('Usuario o contraseña incorrectos');
     }
@@ -32,12 +32,11 @@ const Home = () => {
           <img src="/Logo.png" className="logo" alt="Logo" />
         </div>
         <ul className="navbar-links">
-          <li><a href="#obras">Obras</a></li>
+          <li><a href="/obras">Obras</a></li>
           <li><a href="/dashboard">Artistas</a></li>
-          <li><a href="#tienda">Tienda</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#contactanos">Contáctanos</a></li>
+          <li><a href="/Paginainicio">Tienda</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/conocenos">Nosotros</a></li>
         </ul>
       </nav>
       <div className="container">
