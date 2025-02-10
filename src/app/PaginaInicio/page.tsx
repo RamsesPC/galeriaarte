@@ -48,7 +48,7 @@ const Inicio = () => {
         <div className="imagenes-destacadas">
           <h2>Arte Destacado</h2>
           <div className="imagenes">
-            <img src='/Imagen/ImagenInicio_1.jpeg' alt="Arte 1" />
+            <img src="/Imagen/ImagenInicio_1.jpg" alt="Arte 1" />
             <img src="/imagen/ImagenInicio_2.jpeg" alt="Arte 2" />
             <img src="/imagen/ImagenInicio_3.jpeg" alt="Arte 3" />
           </div>

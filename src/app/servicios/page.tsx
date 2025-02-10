@@ -22,7 +22,7 @@ const Servicios = () => {
         </div>
         <ul className="navbar-links">
           <li><a href="/obras">Obras</a></li>
-          <li><a href="/dashboard">Artistas</a></li>
+          <li><a href="/prueba">Artistas</a></li>
           <li><a href="/PaginaInicio">Tienda</a></li>
           <li><a href="/servicios">Servicios</a></li>
           <li><a href="/conocenos">Nosotros</a></li>
