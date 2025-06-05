@@ -1,4 +1,5 @@
 'use client'
+
 // Importamos React y useRouter
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -15,14 +16,33 @@ const Home = () => {
   const [error, setError] = useState('');
 
   // Función para manejar el envío del formulario
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Validar las credenciales (puedes personalizar esto según tus necesidades)
-    if (username === 'admin' && password === 'password') {
-      router.push('/PaginaInicio');
-    } else {
-      setError('Usuario o contraseña incorrectos');
+
+    try {
+      // Realizamos la petición a la API para verificar las credenciales
+      const response = await fetch('http://localhost:3100/usuarios');
+      if (response.ok) {
+        const data = await response.json();
+        // Buscar al usuario en los datos obtenidos
+        const user = data.find((u: any) => u.correo === username && u.password === password);
+        
+        if (user) {
+          router.push('/PaginaInicio'); // Redirigir si las credenciales son correctas
+        } else {
+          setError('Usuario o contraseña incorrectos');
+        }
+      } else {
+        setError('Error al conectar con el servidor');
+      }
+    } catch (error) {
+      setError('Error de conexión con el servidor.');
     }
+  };
+
+  // Función para manejar el registro de nuevos usuarios
+  const handleCreateAccount = () => {
+    router.push('/registro'); // Redirigir a la página de creación de cuenta
   };
 
   return (
@@ -34,7 +54,7 @@ const Home = () => {
         <ul className="navbar-links">
           <li><a href="/obras">Obras</a></li>
           <li><a href="/dashboard">Artistas</a></li>
-          <li><a href="/Paginainicio">Tienda</a></li>
+          <li><a href="/PaginaInicio">Tienda</a></li>
           <li><a href="/servicios">Servicios</a></li>
           <li><a href="/conocenos">Nosotros</a></li>
         </ul>
@@ -65,6 +85,10 @@ const Home = () => {
           {error && <p className="error">{error}</p>}
           <button type="submit">Confirmar</button>
         </form>
+        <div className="create-account">
+          <p>¿No tienes cuenta?</p>
+          <button onClick={handleCreateAccount}>Crear Cuenta</button>
+        </div>
       </div>
     </div>
   );

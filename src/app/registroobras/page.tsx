@@ -1,73 +1,65 @@
 'use client'
 
-// Importamos React y useRouter
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Importamos useRouter desde next/navigation
-import './estilosregistroobras.css'; // Importamos los estilos para el registro de obras
+import { useRouter } from 'next/navigation';
+import './estilosregistroobras.css';
 import Link from 'next/link';
 
-// Definimos el componente funcional RegistroObras
 const RegistroObras = () => {
-  // Estados para los campos del formulario
+  const [artistaId, setArtistaId] = useState('');
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
-  const [categoria, setCategoria] = useState('');
-  const [precio, setPrecio] = useState('');
-  const [anoCreacion, setAnoCreacion] = useState('');
-  const [dimensiones, setDimensiones] = useState('');
   const [tecnica, setTecnica] = useState('');
-  const [fotoObra, setFotoObra] = useState<File | null>(null);
-  const [certificado, setCertificado] = useState<File | null>(null);
-  const [estado, setEstado] = useState('');
+  const [dimensiones, setDimensiones] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [fechaCreacion, setFechaCreacion] = useState('');
+  const [imagenUrl, setImagenUrl] = useState('');
+  const [disponible, setDisponible] = useState(true);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  // Hook para acceder al enrutador de Next.js
   const router = useRouter();
 
-  // Función para manejar el envío del formulario
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setSuccess('');
 
-    // Crear un FormData para enviar datos y archivos
-    const formData = new FormData();
-    formData.append('titulo', titulo);
-    formData.append('descripcion', descripcion);
-    formData.append('categoria', categoria);
-    formData.append('precio', precio);
-    formData.append('anoCreacion', anoCreacion);
-    formData.append('dimensiones', dimensiones);
-    formData.append('tecnica', tecnica);
-    if (fotoObra) formData.append('fotoObra', fotoObra);
-    if (certificado) formData.append('certificado', certificado);
-    formData.append('estado', estado);
+    const obra = {
+      artista_id: parseInt(artistaId),
+      titulo,
+      descripcion,
+      tecnica,
+      dimensiones,
+      precio: parseFloat(precio),
+      fecha_creacion: fechaCreacion,
+      imagen_url: imagenUrl,
+      disponible,
+    };
 
     try {
       const response = await fetch('http://localhost:3100/obras', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obra),
       });
 
       if (response.ok) {
-        setSuccess('Datos enviados exitosamente.');
-        // Limpiar los campos del formulario
+        setSuccess('Obra registrada exitosamente.');
+        setArtistaId('');
         setTitulo('');
         setDescripcion('');
-        setCategoria('');
-        setPrecio('');
-        setAnoCreacion('');
-        setDimensiones('');
         setTecnica('');
-        setFotoObra(null);
-        setCertificado(null);
-        setEstado('');
-
-        // Redirigir al usuario al dashboard después de enviar los datos
+        setDimensiones('');
+        setPrecio('');
+        setFechaCreacion('');
+        setImagenUrl('');
+        setDisponible(true);
         router.push('/dashboard');
       } else {
-        setError('Error al enviar los datos.');
+        setError('Error al registrar la obra.');
       }
     } catch (error) {
       setError('Error de conexión con el servidor.');
@@ -88,119 +80,62 @@ const RegistroObras = () => {
           <li><a href="/conocenos">Nosotros</a></li>
         </ul>
       </nav>
+
       <div className="container">
         <h1>Registro de Obras</h1>
         <form onSubmit={handleSubmit} className="form">
           <div className="formGroup">
-            <label htmlFor="titulo">Título de la obra:</label>
-            <input
-              type="text"
-              id="titulo"
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              required
-            />
+            <label htmlFor="artistaId">ID del Artista:</label>
+            <input type="number" id="artistaId" value={artistaId} onChange={(e) => setArtistaId(e.target.value)} required />
+          </div>
+          <div className="formGroup">
+            <label htmlFor="titulo">Título:</label>
+            <input type="text" id="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)} required />
           </div>
           <div className="formGroup">
             <label htmlFor="descripcion">Descripción:</label>
-            <textarea
-              id="descripcion"
-              value={descripcion}
-              onChange={(e) => setDescripcion(e.target.value)}
-              required
-            ></textarea>
-          </div>
-          <div className="formGroup">
-            <label htmlFor="categoria">Categoría:</label>
-            <input
-              type="text"
-              id="categoria"
-              value={categoria}
-              onChange={(e) => setCategoria(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label htmlFor="precio">Precio:</label>
-            <input
-              type="text"
-              id="precio"
-              value={precio}
-              onChange={(e) => setPrecio(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label htmlFor="anoCreacion">Año de creación:</label>
-            <input
-              type="text"
-              id="anoCreacion"
-              value={anoCreacion}
-              onChange={(e) => setAnoCreacion(e.target.value)}
-              required
-            />
-          </div>
-          <div className="formGroup">
-            <label htmlFor="dimensiones">Dimensiones:</label>
-            <input
-              type="text"
-              id="dimensiones"
-              value={dimensiones}
-              onChange={(e) => setDimensiones(e.target.value)}
-              required
-            />
+            <textarea id="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required></textarea>
           </div>
           <div className="formGroup">
             <label htmlFor="tecnica">Técnica:</label>
-            <input
-              type="text"
-              id="tecnica"
-              value={tecnica}
-              onChange={(e) => setTecnica(e.target.value)}
-              required
-            />
+            <input type="text" id="tecnica" value={tecnica} onChange={(e) => setTecnica(e.target.value)} />
           </div>
           <div className="formGroup">
-            <label htmlFor="fotoObra">Fotografía de la obra:</label>
-            <input
-              type="file"
-              id="fotoObra"
-              onChange={(e) => setFotoObra(e.target.files ? e.target.files[0] : null)}
-              required
-            />
+            <label htmlFor="dimensiones">Dimensiones:</label>
+            <input type="text" id="dimensiones" value={dimensiones} onChange={(e) => setDimensiones(e.target.value)} />
           </div>
           <div className="formGroup">
-            <label htmlFor="certificado">Certificado de autenticidad:</label>
-            <input
-              type="file"
-              id="certificado"
-              onChange={(e) => setCertificado(e.target.files ? e.target.files[0] : null)}
-            />
+            <label htmlFor="precio">Precio:</label>
+            <input type="number" step="0.01" id="precio" value={precio} onChange={(e) => setPrecio(e.target.value)} required />
           </div>
           <div className="formGroup">
-            <label htmlFor="estado">Estado:</label>
-            <input
-              type="text"
-              id="estado"
-              value={estado}
-              onChange={(e) => setEstado(e.target.value)}
-              required
-            />
+            <label htmlFor="fechaCreacion">Fecha de Creación:</label>
+            <input type="date" id="fechaCreacion" value={fechaCreacion} onChange={(e) => setFechaCreacion(e.target.value)} required />
+          </div>
+          <div className="formGroup">
+            <label htmlFor="imagenUrl">URL de la Imagen:</label>
+            <input type="text" id="imagenUrl" value={imagenUrl} onChange={(e) => setImagenUrl(e.target.value)} />
+          </div>
+          <div className="formGroup">
+            <label htmlFor="disponible">Disponible:</label>
+            <select id="disponible" value={disponible.toString()} onChange={(e) => setDisponible(e.target.value === 'true')}>
+              <option value="true">Sí</option>
+              <option value="false">No</option>
+            </select>
           </div>
           {error && <p className="error">{error}</p>}
           {success && <p className="success">{success}</p>}
-          <button type="submit">Enviar</button>
+          <button type="submit">Registrar Obra</button>
         </form>
-        {/* Botón para regresar a la página principal */}
-      <div className="volver-container">
-        <Link href="/">
-          <button className="volver-boton">Volver a la página principal</button>
-        </Link>
-      </div>
+
+        <div className="volver-container">
+          <Link href="/">
+            <button className="volver-boton">Volver a la página principal</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-// Exportamos el componente
 export default RegistroObras;

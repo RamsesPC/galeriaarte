@@ -1,0 +1,104 @@
+/* registro.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #b76e79; /* Oro rosa */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 50px;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #b76e79; /* Oro rosa */
+    margin-bottom: 25px;
+    font-size: 26px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #5a3d44;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  .formGroup input:focus,
+  .formGroup select:focus {
+    border-color: #b76e79;
+    outline: none;
+  }
+  
+  button {
+    background-color: #b76e79;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #a35763;
+  }
+  
+  .error {
+    color: #ff4d4d;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      margin: 30px 15px;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  }
+  

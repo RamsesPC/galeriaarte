@@ -43,17 +43,18 @@ body {
 
 .container {
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 80px auto;
+  padding: 30px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
   color: #b76e79; /* Oro rosa */
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  font-size: 26px;
 }
 
 .form {
@@ -67,8 +68,8 @@ h1 {
 
 .formGroup label {
   display: block;
-  margin-bottom: 5px;
-  color: #333;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
 .formGroup input {
@@ -76,30 +77,71 @@ h1 {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 14px;
 }
 
 .formGroup input:focus {
-  border-color: #b76e79; /* Oro rosa */
+  border-color: #b76e79;
   outline: none;
 }
 
 button {
-  background-color: #b76e79; /* Oro rosa */
+  background-color: #b76e79;
   color: #fff;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
+  margin-top: 10px;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #a35763; /* Oro rosa más oscuro */
+  background-color: #a35763;
+}
+
+button.secondary {
+  background-color: #fff;
+  color: #b76e79;
+  border: 2px solid #b76e79;
+  margin-top: 10px;
+}
+
+button.secondary:hover {
+  background-color: #f4c2c2;
+  color: #fff;
+  border-color: #a35763;
 }
 
 .error {
   color: #ff4d4d;
   margin-top: 10px;
   text-align: center;
+  font-size: 14px;
 }
+
+.create-account {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-account p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.create-account button {
+  background-color: #b76e79; /* Oro rosa */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.create-account button:hover {
+  background-color: #a35763; /* Oro rosa más oscuro */
+}
+      
