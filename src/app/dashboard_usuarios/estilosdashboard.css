@@ -1,0 +1,109 @@
+/* estilosdashboard.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #b76e79; /* Rosa dorado */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #f4c2c2; /* Rosa más claro */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #b76e79; /* Rosa dorado */
+  margin-bottom: 30px;
+}
+
+.artist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.artist-table th, .artist-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.artist-table th {
+  background-color: #b76e79; /* Rosa dorado */
+  color: white;
+}
+
+.artist-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.artist-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #b76e79; /* Rosa dorado */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a35763; /* Rosa más oscuro */
+}

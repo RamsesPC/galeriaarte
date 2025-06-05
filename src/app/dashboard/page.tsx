@@ -1,56 +1,21 @@
-'use client'
+'use client';
 
-// Importamos React y useRouter
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
-import './estilosdashboard.css'; // Importamos los estilos del dashboard
+import Link from 'next/link';
+import './estilos_dashboard.css'; // Asegúrate de crear o adaptar este archivo CSS
 
-// Definimos el tipo de objeto Artista
-interface Artista {
-  nombre: string;
-  declaracion: string;
-  razon_social: string;
-  rfc: string;
-  domicilio: string;
-  estado: string;
-  ciudad: string;
-  cp: string;
-  celular: string;
-  correo: string;
-}
-
-// Definimos el componente funcional Dashboard
-const Dashboard = () => {
-  const [artists, setArtists] = useState<Artista[]>([]); // Especificamos el tipo de artistas
-  const [error, setError] = useState<string>(''); // Especificamos el tipo de error como string
+const OpcionesDashboard = () => {
   const router = useRouter();
 
-  useEffect(() => {
-    // Función para obtener los datos de los artistas
-    const fetchArtists = async () => {
-      try {
-        const response = await fetch('http://localhost:3100/artista');
-        if (response.ok) {
-          const data = await response.json();
-          setArtists(data);
-        } else {
-          setError('Error al obtener los datos de los artistas.');
-        }
-      } catch (error) {
-        setError('Error de conexión con el servidor.');
-      }
-    };
-
-    fetchArtists();
-  }, []);
-
-  // Función para manejar el regreso al home y recargar la página
-  const handleHomeButtonClick = () => {
-    router.push('/');
-  };
+  // Funciones para redirigir a cada dashboard
+  const irDashboardArtistas = () => router.push('/dashboard_artistas');
+  const irDashboardUsuarios = () => router.push('/dashboard_usuarios');
+  const irDashboardCompradores = () => router.push('/dashboard_compradores');
 
   return (
     <div>
+      {/* Barra de navegación */}
       <nav className="navbar">
         <div className="navbar-logo">
           <img src="/Logo.png" className="logo" alt="Logo" />
@@ -63,40 +28,27 @@ const Dashboard = () => {
           <li><a href="/conocenos">Nosotros</a></li>
         </ul>
       </nav>
+
+      {/* Contenido de opciones */}
       <div className="container">
-        <h1>Dashboard de Artistas</h1>
-        {error && <p className="error">{error}</p>}
-        <table className="artist-table">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Declaración</th>
-              <th>Razón Social</th>
-              <th>RFC</th>
-              <th>Celular</th>
-              <th>Correo</th>
-            </tr>
-          </thead>
-          <tbody>
-            {artists.map((artist, index) => (
-              <tr key={index}>
-                <td>{artist.nombre}</td>
-                <td>{artist.declaracion}</td>
-                <td>{artist.razon_social}</td>
-                <td>{artist.rfc}</td>
-                <td>{artist.celular}</td>
-                <td>{artist.correo}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="button-container">
-          <button onClick={handleHomeButtonClick}>Regresar al Home</button>
+        <h1>Paneles de Administración</h1>
+        <p>Selecciona el dashboard que deseas visualizar:</p>
+
+        <div className="opciones-dashboard">
+          <button className="btn" onClick={irDashboardArtistas}>Dashboard de Artistas</button>
+          <button className="btn" onClick={irDashboardUsuarios}>Dashboard de Usuarios</button>
+          <button className="btn" onClick={irDashboardCompradores}>Dashboard de Compradores</button>
+        </div>
+
+        {/* Botón para regresar a la página principal */}
+        <div className="volver-container">
+          <Link href="/">
+            <button className="volver-boton">Volver a la página principal</button>
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-// Exportamos el componente
-export default Dashboard;
+export default OpcionesDashboard;
